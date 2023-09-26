@@ -17,18 +17,34 @@
             text-align: center;
             font-weight: 500;
           }
-        
+        .container {
+            position: relative;
+            text-align: center;
+            color: white;
+          }
+        .top-left {
+            position: absolute;
+            top: 20px;
+            left: 40px;
+        }
+       
+     
     </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>First Challenge</title>
+    <title>Fourth Challenge</title>
   </head>
   <body>
-    <h1>Centering an Image</h1>
+    <h1>Text on an Image</h1>
     <p>Here is a centerd picture of Little Crater Lake, grayscaled to 89%</p>
- 
-    <img src="./Basic_HTML_and_JavaScript_1/Little_Crater_Lake.jpg" alt="LCS" style="width:50%;">
+    
+    <div class="container">
+        <img src="../Icons/Little_Crater_Lake.jpg" alt="LCS" style="width:100%;">
+        <div class="top-left">Little Crater Lake, OR</div>
+    </div>
+
+   
   
     <footer>
         <p>Photo taken by Jordan Kelley &copy;2019 All Rights Reserved&reg;</p>
