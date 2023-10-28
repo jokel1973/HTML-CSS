@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width" />
         <title>Portfolio</title>
         <link rel="stylesheet" type="text/css" href="./CSS/portfolio.css">
+        <script src="./JS/portfolio.js"></script>
     </head>
 
     <!--Body-->
@@ -16,17 +17,22 @@
             <a class="active" href="#Home">Home</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
-            <a href="#Contact">Contact</a>
+            
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
         </div>
 
         <!--Breaks inserted to add space between navbar and the first heading-->
+        <br>
+        <br>
+        <br>
+        <br>
         <br>
         <br>
 
         <!--Background video-->
         <div id="Home">
             <video autoplay muted loop id="Typing_Video">
-                <source src="images/video/Typing.mp4" type="video/mp4">
+                <source src="images/video/typing_php_code.mp4" type="video/mp4">
                 <!--Display message if video fails to run-->
                 Your browser does not support HTML5 video.
             </video>
@@ -37,13 +43,12 @@
             <h1 class="white-text">Jordan Kelley's Portfolio</h1>
             <strong>
                 <p class="center">
-                    <q>The computer programmer is a creator of universes for which he alone is the lawgiver.
-                        <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or
-                        <br>field of battle and to command such unswervingly dutiful actors or troops.
+                    <q>A computer lets you make more mistakes faster than any invention in
+                        <br>human history, with the possible exceptions of handguns and tequila.                        
                     </q>
-                    <br> -Joseph Weizenbaum
+                    <br> -Mitch Ratcliffe in Technology Review April 1992
                     <br>
-                    <br> My name is Jordan Kelley. Welcome to my portfolio website. On it, I will tell you about my background and experience.
+                    <br> My name is Jordan Kelley. Welcome to my portfolio website. Here you can see my work and how I can help you in your programming projects.
                     <br>
                     <br> Thank you for checking out my work, have a beautiful day! 
                 </p>
@@ -54,7 +59,7 @@
         <div class="Row" id="About">
             <!--Left column-->
             <div class="Column_2">
-                <img src="./images/about.jpg" alt="Replace with your own image and description">
+                <img src="./images/about.jpg" alt="Milky Way Galaxy">
             </div>
             <!--Right column-->
             <div class="Column_1">
@@ -86,25 +91,25 @@
             </div>
         </div>
 
-        <!--Contact section-->
-        <div class="Row" id="Contact">
-            <!--Contact image, left column-->
-            <div class="Column_2 Column_tall">
-                <img src="https://media.istockphoto.com/id/1405625971/photo/carrier-pigeon-carrying-and-delivering-mail-message.webp?b=1&s=612x612&w=0&k=20&c=2tdve2CXdSrkqgg_hmIpOdwjzPOVPIfXKgf7aQYKbPA=" alt="Contact_Image">
-            </div>
-            <!--Contact form, right column-->
-            <div class="Column_1 Column_tall">
-                <h1>Contact</h1>
-                <!--This specifies where and how to send the form data; we are leaving it blank-->
-                <form action="" method="POST"> <!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please let me know the reason for contact">
-                        <input type="submit" value="SUBMIT">
-                </form>
+        
+            <!--Contact form-->
+            <div id="Contact">
+                <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+                <div class="form-popup" id="myForm">
+                     <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container"> <!-- Here we are using a free online service from https://formspree.io/ to send our contact form to an email address of our choosing - note: it will not run unless live on the internet, you have to push it to your online website first -->
+                         <h1>Contact</h1>
+                         <label for="name"><b>Name</b></label>
+                           <input type="text" placeholder="Type your name here" name="name" required>
+                         <label for="phone"><b>Phone</b></label>
+                           <input type="text" placeholder="Type your phone number here" name="phone">
+                         <label for="email"><b>Email</b></label>		
+                           <input type="text" placeholder="Type your email address here" name="email" required>
+                         <label for="message"><b>Message</b></label>
+                           <input type="text" placeholder="Type your message here" name="message">
+              
+                         <button type="submit" class="btn">SUBMIT</button>
+                         <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                     </form>
             </div>
         </div>
 
